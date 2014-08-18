@@ -3,7 +3,7 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1.0'>		
 <script>
-var server='http:server.php';
+var server='http://verticaldev.altervista.org/tamtam/server.php';
 function parseGetVars(){
   var args = new Array();
   var query = window.location.search.substring(1);
