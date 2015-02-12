@@ -46,18 +46,21 @@ function ahahDone(req,url,target){
 <body>
 room <input type='text' name='room' id='room' value="">
 <input type="button" value='cancella' onclick="location=server+'?delete=yes&room='+room.value" target='display'> <br> 
-<textarea name='display' id='display' style="width:320px;height:350px;"></textarea><br>
+<textarea name='display' id='display' style="width:320px;height:350px;"></textarea>
+<textarea name='listusers' id='listusers' style="width:280px;height:350px;"></textarea>
+<br>
 user <input type='text' name='user' id='user' value="" ><br>
 <input type='text' name='message' id='message' style="width:270px;" onkeydown="if(event.keyCode==13){ahah(server+'?scope=text&room='+room.value+'&user='+user.value+'&message='+message.value,'display');message.value='';display.scrollTop = display.scrollHeight;}">
 <button onclick="ahah(server+'?scope=text&room='+room.value+'&user='+user.value+'&message='+message.value,'display');message.value='';display.scrollTop = display.scrollHeight;" >invia</button><br>
 </body>
 <script>
-	setInterval(function(){ahah(server+'?scope=text&room='+room.value,'display');display.scrollTop = display.scrollHeight;},5000);
+	setInterval(function(){ahah(server+'?scope=text&room='+room.value,'display');display.scrollTop = display.scrollHeight; ahah(server+'?scope=list&room='+room.value,'listusers');},5000);
 	room.value=get['room'];
 	user.value=get['user'];
 	if (room.value=='undefined')room.value=prompt("please enter room name");
 	if (user.value=='undefined')user.value=prompt("please enter username");
 	ahah(server+'?scope=text&room='+room.value,'display');
+	ahah(server+'?scope=list&room='+room.value,'listusers');
 	display.scrollTop = display.scrollHeight;
 </script>
 
