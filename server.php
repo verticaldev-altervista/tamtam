@@ -15,7 +15,7 @@
 		$lu=@file("rooms/$room".".list");
 		$listuser=join($lu);
 		for($i=0;$i<count($lu);$i++){
-			if(date($lu[$i])< date('d-m-Y H:i:s',strtotime("$data - 1 hour"))||strpos($listuser,$user)!=false){
+			if(date($lu[$i])< date('d-m-Y H:i:s',strtotime(date()."- 5 minuts"))||strpos($listuser,$user)!=false){
 				unset($lu[$i]);
 				$listuser=join($lu);
 				unlink ("rooms/$room".".list");		
