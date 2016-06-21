@@ -1,10 +1,10 @@
 <?php
-	$scope=$_GET['scope'];
-	$room=$_GET['room'];if($room=='')$room=$_POST['room'];
-	$user=$_GET['user'];if($user=='')$user=$_POST['user'];
-	$message=$_GET['message'];if($message=='')$message=$_POST['message'];
+	$scope=@$_GET['scope'];
+	$room=@$_GET['room'];if($room=='')$room=@$_POST['room'];
+	$user=@$_GET['user'];if($user=='')$user=@$_POST['user'];
+	$message=@$_GET['message'];if($message=='')$message=@$_POST['message'];
 	
-	$delete=$_GET['delete'];
+	$delete=@$_GET['delete'];
 	if($delete!="" && $room!=""){
 		unlink ("rooms/$room");
 		unlink ("rooms/$room".".list");		
