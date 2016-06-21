@@ -1,5 +1,5 @@
 <?php
-	$server="http:server.php";
+	$server="server.php";
 	$room=$_GET['room'];
 	$user=$_GET['user'];
 	$message=$_GET['message'];
